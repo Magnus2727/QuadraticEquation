@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuadraticEquationRootCalculator", "QuadraticEquationRootCalculator\QuadraticEquationRootCalculator.csproj", "{42B3E1B3-EAB2-4059-9B2A-3B49E2465A8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuadraticEquationRootCalculator.Tests", "QuadraticEquationRootCalculator.Tests\QuadraticEquationRootCalculator.Tests.csproj", "{BA106926-574C-47AA-9980-AE7BCCCF1E05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42B3E1B3-EAB2-4059-9B2A-3B49E2465A8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42B3E1B3-EAB2-4059-9B2A-3B49E2465A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42B3E1B3-EAB2-4059-9B2A-3B49E2465A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42B3E1B3-EAB2-4059-9B2A-3B49E2465A8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA106926-574C-47AA-9980-AE7BCCCF1E05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA106926-574C-47AA-9980-AE7BCCCF1E05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA106926-574C-47AA-9980-AE7BCCCF1E05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA106926-574C-47AA-9980-AE7BCCCF1E05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0108ACC-782C-4D9C-9789-31E3483C422F}
+	EndGlobalSection
+EndGlobal
