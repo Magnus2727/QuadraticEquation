@@ -6,18 +6,26 @@ namespace QuadraticEquationRootCalculator
 {
     public class RootCalculator
     {
-        public double Root1 { get; private set; }
-        public double Root2 { get; private set; }
+        public List<double> Roots { get; private set; }
         public double Delta { get; private set; }
         private double A { get; set; }
         private double B { get; set; }
         private double C { get; set; }
 
+        public RootCalculator()
+        {
+            this.A = Double.NaN;
+            this.B = Double.NaN;
+            this.C = Double.NaN;
+            this.Delta = Double.NaN;
+            this.Roots = new List<double>();
+        }
         public RootCalculator(double a, double b, double c)
         {
             this.A = a;
             this.B = b;
             this.C = c;
+            this.Roots = new List<double>();
         }
 
         public void RootCalculate()
@@ -28,35 +36,36 @@ namespace QuadraticEquationRootCalculator
                 Console.WriteLine("function is linear, no roots");
                 return;
             }
-
+            
             CalculateDelta();
             double divider = 2 * A;
 
             if (Delta > 0)
             {
-                Root1 = (-B / divider) + (Math.Sqrt(Delta) / divider);
-                Root2 = (-B / divider) - (Math.Sqrt(Delta) / divider);
-                Console.WriteLine($"function with two roots: {Root1}, {Root2}");
+                Roots.Add((-B / divider) + (Math.Sqrt(Delta) / divider));
+                Roots.Add((-B / divider) - (Math.Sqrt(Delta) / divider));
                 return;
             }
 
             if (Delta == 0)
             {
-                Root1 = -B / divider;
-                Root2 = Root1;
-                Console.WriteLine($"function with one root: {Root1}");
+                Roots.Add(-B / divider);
                 return;
-            }
-
-            if (Delta < 0)
-            {
-                Console.WriteLine("Equation without real roots");
             }
 
         }
         private void CalculateDelta()
         {
             Delta = Math.Pow(B, 2) - (4 * A * C);
+        }
+
+        public override string ToString()
+        {
+            if (Roots.Count == 2)
+                return $"Equation has two roots: {Roots[0]},{Roots[1]}";
+            if (Roots.Count == 1)
+                return $"Equation has one root: {Roots[0]}";
+            return "Equation has 0 roots in real domain";
         }
     }
 }
