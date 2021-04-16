@@ -4,6 +4,9 @@ using System.Text;
 
 namespace QuadraticEquationRootCalculator
 {
+    //Mikołaj Koczur
+    //INF_ZI/IV Semestr
+    //Nr albumu :39254
     public class RootCalculator
     {
         public List<double> Roots { get; private set; }

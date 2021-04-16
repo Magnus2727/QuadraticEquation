@@ -5,6 +5,9 @@ using System.Text;
 
 namespace QuadraticEquationRootCalculator.Tests
 {
+    //Mikołaj Koczur
+    //INF_ZI/IV Semestr
+    //Nr albumu :39254
     [TestFixture]
     public class RootCalcuratorTests
     {
