@@ -75,6 +75,47 @@ namespace QuadraticEquationRootCalculator.Tests
             rc.RootCalculate();
             Assert.AreEqual(rc.Delta, 0);
         }
-
+        [Test]
+        [TestCase(1, -1, 1, "Equation has 0 roots in real domain")]
+        [TestCase(1, -1, 1, "Equation has 0 roots in real domain")]
+        [TestCase(1, 0, 1, "Equation has 0 roots in real domain")]
+        [TestCase(-1, 0, -1, "Equation has 0 roots in real domain")]
+        [TestCase(1, 1, 1, "Equation has 0 roots in real domain")]
+        [TestCase(-1, 1, -1, "Equation has 0 roots in real domain")]
+        [TestCase(-1, -1, -1, "Equation has 0 roots in real domain")]
+        public void CalculateQuadraticEquationRoots_ExampleWithDeltaLowerThanZero_ExpectedMessageForZeroRoots(double firstValue, double secondValue, double thirdValue, string message)
+        {
+            RootCalculator rc = new RootCalculator(firstValue, secondValue, thirdValue);
+            rc.RootCalculate();
+            Assert.AreEqual(rc.ToString(), message);
+        }
+        [Test]
+        [TestCase(1, -1, 1)]
+        [TestCase(1, -1, 1)]
+        [TestCase(1, 0, 1)]
+        [TestCase(-1, 0, -1)]
+        [TestCase(1, 1, 1)]
+        [TestCase(-1, 1, -1)]
+        [TestCase(-1, -1, -1)]
+        public void CalculateQuadraticEquationRoots_ExampleWithDeltaLowerThanZero_ExpectedDeltaLowerthanZero (double firstValue, double secondValue, double thirdValue)
+        {
+            RootCalculator rc = new RootCalculator(firstValue, secondValue, thirdValue);
+            rc.RootCalculate();
+            Assert.Less(rc.Delta, 0);
+        }
+        [Test]
+        [TestCase(1, -1, 1)]
+        [TestCase(1, -1, 1)]
+        [TestCase(1, 0, 1)]
+        [TestCase(-1, 0, -1)]
+        [TestCase(1, 1, 1)]
+        [TestCase(-1, 1, -1)]
+        [TestCase(-1, -1, -1)]
+        public void CalculateQuadraticEquationRoots_ExampleWithDeltaLowerThanZero_ExpectedZeroRoots(double firstValue, double secondValue, double thirdValue)
+        {
+            RootCalculator rc = new RootCalculator(firstValue, secondValue, thirdValue);
+            rc.RootCalculate();
+            Assert.AreEqual(rc.Roots.Count, 0);
+        }
     }
 }

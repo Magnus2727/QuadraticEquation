@@ -33,8 +33,7 @@ namespace QuadraticEquationRootCalculator
 
             if (A == 0)
             {
-                Console.WriteLine("function is linear, no roots");
-                return;
+                throw new Exception("Function is linear, no roots");
             }
             
             CalculateDelta();
