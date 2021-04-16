@@ -12,14 +12,6 @@ namespace QuadraticEquationRootCalculator
         private double B { get; set; }
         private double C { get; set; }
 
-        public RootCalculator()
-        {
-            this.A = Double.NaN;
-            this.B = Double.NaN;
-            this.C = Double.NaN;
-            this.Delta = Double.NaN;
-            this.Roots = new List<double>();
-        }
         public RootCalculator(double a, double b, double c)
         {
             this.A = a;
@@ -30,6 +22,7 @@ namespace QuadraticEquationRootCalculator
 
         public void RootCalculate()
         {
+            
 
             if (A == 0)
             {
@@ -66,5 +59,6 @@ namespace QuadraticEquationRootCalculator
                 return $"Equation has one root: {Roots[0]}";
             return "Equation has 0 roots in real domain";
         }
+        
     }
 }

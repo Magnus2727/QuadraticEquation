@@ -9,17 +9,6 @@ namespace QuadraticEquationRootCalculator.Tests
     public class RootCalcuratorTests
     {
         [Test]
-        [TestCase(1,1,-1)]
-        [Ignore("copy paste template")]
-        public void CalculateQuadraticEquationRoots_(double firstValue, double secondValue, double thirdValue)
-        {
-            RootCalculator rc = new RootCalculator(firstValue, secondValue, thirdValue);
-            rc.RootCalculate();
-            var result = rc.Delta;
-            Assert.Greater(result, 0);
-        }
-
-        [Test]
         [TestCase(1, 1, -1)]
         [TestCase(1, 0, -1)]
         [TestCase(1, -1, -1)]
@@ -29,6 +18,7 @@ namespace QuadraticEquationRootCalculator.Tests
             rc.RootCalculate();
             Assert.Greater(rc.Delta, 0);
         }
+
         [Test]
         [TestCase(1, 1, -1)]
         [TestCase(1, 0, -1)]
@@ -39,6 +29,7 @@ namespace QuadraticEquationRootCalculator.Tests
             rc.RootCalculate();
             Assert.AreEqual(rc.Roots.Count, 2);
         }
+
         [Test]
         [TestCase(-1, 1, 1)]
         [TestCase(-1, 0, 1)]
@@ -49,6 +40,7 @@ namespace QuadraticEquationRootCalculator.Tests
             rc.RootCalculate();
             Assert.Greater(rc.Delta, 0);
         }
+
         [Test]
         [TestCase(-1, 1, 1)]
         [TestCase(-1, 0, 1)]
@@ -59,6 +51,7 @@ namespace QuadraticEquationRootCalculator.Tests
             rc.RootCalculate();
             Assert.AreEqual(rc.Roots.Count, 2);
         }
+
         [Test]
         [TestCase(1, -2, 1)]
         public void CalculateQuadraticEquationRoots_DeltaEqualsZero_OneRoot(double firstValue, double secondValue, double thirdValue)
@@ -67,6 +60,7 @@ namespace QuadraticEquationRootCalculator.Tests
             rc.RootCalculate();
             Assert.AreEqual(rc.Roots.Count, 1);
         }
+
         [Test]
         [TestCase(1, -2, 1)]
         public void CalculateQuadraticEquationRoots_ExampleWithDeltaEqualsZero_DelatEqualsZero(double firstValue, double secondValue, double thirdValue)
@@ -75,6 +69,7 @@ namespace QuadraticEquationRootCalculator.Tests
             rc.RootCalculate();
             Assert.AreEqual(rc.Delta, 0);
         }
+
         [Test]
         [TestCase(1, -1, 1, "Equation has 0 roots in real domain")]
         [TestCase(1, -1, 1, "Equation has 0 roots in real domain")]
@@ -89,6 +84,7 @@ namespace QuadraticEquationRootCalculator.Tests
             rc.RootCalculate();
             Assert.AreEqual(rc.ToString(), message);
         }
+
         [Test]
         [TestCase(1, -1, 1)]
         [TestCase(1, -1, 1)]
@@ -103,6 +99,7 @@ namespace QuadraticEquationRootCalculator.Tests
             rc.RootCalculate();
             Assert.Less(rc.Delta, 0);
         }
+
         [Test]
         [TestCase(1, -1, 1)]
         [TestCase(1, -1, 1)]
@@ -117,6 +114,7 @@ namespace QuadraticEquationRootCalculator.Tests
             rc.RootCalculate();
             Assert.AreEqual(rc.Roots.Count, 0);
         }
+
         [Test]
         [TestCase(0, -1, 1)]
         [TestCase(0, 0, 1)]
