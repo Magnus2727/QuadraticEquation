@@ -14,6 +14,7 @@ namespace QuadraticEquationRootCalculator
 
         public RootCalculator(double a, double b, double c)
         {
+            this.Delta = double.NaN;
             this.A = a;
             this.B = b;
             this.C = c;
@@ -22,7 +23,6 @@ namespace QuadraticEquationRootCalculator
 
         public void RootCalculate()
         {
-            
 
             if (A == 0)
             {
@@ -55,9 +55,14 @@ namespace QuadraticEquationRootCalculator
         {
             if (Roots.Count == 2)
                 return $"Equation has two roots: {Roots[0]},{Roots[1]}";
-            if (Roots.Count == 1)
+
+            else if (Roots.Count == 1)
                 return $"Equation has one root: {Roots[0]}";
-            return "Equation has 0 roots in real domain";
+
+            else if (Delta.Equals(double.NaN))
+                return "Roots were not calculated yet";
+            else
+                return "Equation has 0 roots in real domain";
         }
         
     }

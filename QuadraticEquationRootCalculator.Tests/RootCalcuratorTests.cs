@@ -130,5 +130,26 @@ namespace QuadraticEquationRootCalculator.Tests
             RootCalculator rc = new RootCalculator(firstValue, secondValue, thirdValue);
             Assert.Throws<Exception>(() => rc.RootCalculate());
         }
+        [Test]
+        [TestCase(1, -2, 1)]
+        public void CalculateQuadraticEquationRoots_RootCalculateMethodNotUsed_ExpectedNanDelta(double firstValue, double secondValue, double thirdValue)
+        {
+            RootCalculator rc = new RootCalculator(firstValue, secondValue, thirdValue);
+            Assert.AreEqual(rc.Delta, Double.NaN);
+        }
+        [Test]
+        [TestCase(1, -2, 1)]
+        public void CalculateQuadraticEquationRoots_RootCalculateMethodNotUsed_ExpectedRootCountZero(double firstValue, double secondValue, double thirdValue)
+        {
+            RootCalculator rc = new RootCalculator(firstValue, secondValue, thirdValue);
+            Assert.AreEqual(rc.Roots.Count,0);
+        }
+        [Test]
+        [TestCase(1, -2, 1, "Roots were not calculated yet")]
+        public void CalculateQuadraticEquationRoots_RootCalculateMethodNotUsed_ExpectedMessage(double firstValue, double secondValue, double thirdValue, string message)
+        {
+            RootCalculator rc = new RootCalculator(firstValue, secondValue, thirdValue);
+            Assert.AreEqual(rc.ToString(), message);
+        }
     }
 }
