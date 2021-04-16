@@ -117,5 +117,20 @@ namespace QuadraticEquationRootCalculator.Tests
             rc.RootCalculate();
             Assert.AreEqual(rc.Roots.Count, 0);
         }
+        [Test]
+        [TestCase(0, -1, 1)]
+        [TestCase(0, 0, 1)]
+        [TestCase(0, 1, 1)]
+        [TestCase(0, -1, 0)]
+        [TestCase(0, 0, 0)]
+        [TestCase(0, 1, 0)]
+        [TestCase(0, -1, -1)]
+        [TestCase(0, 0, -1)]
+        [TestCase(0, 1, -1)]
+        public void CalculateQuadraticEquationRoots_ExampleWithFirstValueZero_ExpectedException(double firstValue, double secondValue, double thirdValue)
+        {
+            RootCalculator rc = new RootCalculator(firstValue, secondValue, thirdValue);
+            Assert.Throws<Exception>(() => rc.RootCalculate());
+        }
     }
 }
